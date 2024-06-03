@@ -1,4 +1,4 @@
-import taxmodel from '../model/taxmodel.js';
+import taxmodel from '../model/taxModel.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
