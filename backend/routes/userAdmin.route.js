@@ -9,7 +9,7 @@ const router=express.Router();
 // Register new Adminuser
 router.post("/signup",roleCheckMiddleware, addNewUser);
 router.get("/allusers", salectAllUser);
-router.put("/update-admin/:id",updateAdmin);
+router.put("/update-admin/:id",roleCheckMiddleware,updateAdmin);
 
 
 
