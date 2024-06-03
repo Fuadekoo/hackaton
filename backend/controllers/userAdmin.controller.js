@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 const addNewUser = async (req, res) => {
-        const {companyName,TIN,capital,email,password,phonenumber,address,role,level} =req.body
+        const {fullName,userName,email,password,phonenumber,address} =req.body
 
     try {
 
@@ -16,7 +16,7 @@ const addNewUser = async (req, res) => {
             });
         }
         const hashedPassword = await bcrypt.hash(password, 10);
-        const adminRole="Admin"
+        const adminRole="admin"
 
         const newUser = new Allusers({fullName:fullName,userName:userName,email:email,password:hashedPassword,phonenumber:phonenumber,address:address,role:adminRole});
         await newUser.save();
