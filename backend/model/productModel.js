@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 import dotenv from 'dotenv';
-// create a user schema
+// create a product schema
 
 const userSchema = new mongoose.Schema({
       avatarImage:{

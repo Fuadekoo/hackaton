@@ -1,5 +1,5 @@
 import express from 'express';
-import {addNewUser,salectAllUser} from '../controllers/user.controller.js';//  Assuming you have a add new user controller defined
+import {addNewUser,salectAllUser} from '../controllers/userAdmin.controller.js';//  Assuming you have a add new user controller defined
 const router=express.Router();
 
 
