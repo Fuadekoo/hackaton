@@ -10,15 +10,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-
 // middleware
-
-
-
 // error handlers middleware
 // app.use(errorHandlerMiddleware);
-
-
 // listen to server
 const PORT = process.env.PORT || 6000;
 app.listen(PORT, () => {
