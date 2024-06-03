@@ -1,8 +1,9 @@
 
 import express from 'express';
 import {AddProduct} from '../controllers/product.controller.js'
+import authMiddleware from '../middlewares/authMiddleware.js'
 const router=express.Router();
 
-router.post('/addProducts',AddProduct)  //to add the new room to the database
+router.post('/addProducts',authMiddleware,AddProduct)  //to add the new room to the database
 
 export default router;
