@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 
+<<<<<<< HEAD
 // middleware
 app.use('/api/product',productRouter);
 
@@ -28,10 +29,11 @@ app.use('/api/auth',authRouter);
 
 
 
+=======
+// middleware
+>>>>>>> 896648305ac3d94e286bbfba3a879b292ad5eac1
 // error handlers middleware
 // app.use(errorHandlerMiddleware);
-
-
 // listen to server
 
 const PORT = process.env.PORT || 56000;
