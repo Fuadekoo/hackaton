@@ -7,13 +7,22 @@ const userSchema = new mongoose.Schema({
         type: String,
         required:true
     },
+    ownerUser:{
+       type: mongoose.Schema.Types.ObjectId,
+       ref: 'Allusers', // Reference to the User model
+       required:true
+    },
 
     productName: {
         type: String,
         required: true
     },
     productType:{
-        type:String,
+       type: mongoose.Schema.Types.ObjectId,
+       ref:'Allusers',
+       required:true
+
+        
     },    
     quantity: {
         type: Number,
@@ -29,7 +38,7 @@ const userSchema = new mongoose.Schema({
         ref: 'Allusers'
     },
    
-    taxtype: [{
+    TaxType: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Tax'
     }],
