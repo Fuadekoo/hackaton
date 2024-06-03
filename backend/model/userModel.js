@@ -18,6 +18,11 @@ const userSchema = new mongoose.Schema({
         type:String,
         default:""
     },
+    productType:{
+        type:String,
+        enum: ['Alcohol', 'Car','Tubaco'],  
+
+    },
     capital:{
         type:String,
     },

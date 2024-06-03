@@ -3,13 +3,15 @@ import dotenv from 'dotenv';
 // create a product schema
 
 const userSchema = new mongoose.Schema({
+
       avatarImage:{
         type: String,
         required:true
     },
     ownerUser:{
-       type: mongoose.Schema.Types.ObjectId,
-       ref: 'Allusers', // Reference to the User model
+        type:String,
+    //    type: mongoose.Schema.Types.ObjectId,
+    //    ref: 'Allusers', // Reference to the User model
        required:true
     },
 
@@ -18,8 +20,7 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     productType:{
-       type: mongoose.Schema.Types.ObjectId,
-       ref:'Allusers',
+       type:String,
        required:true
 
         
@@ -34,14 +35,18 @@ const userSchema = new mongoose.Schema({
   
     
     TIN:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Allusers'
+        type:String,
+        required:true
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Allusers'
     },
    
-    TaxType: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Tax'
-    }],
+    TaxType: {
+        type:String,
+        required:true
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Tax'
+    },
 
 },
 {timestamps:true});
