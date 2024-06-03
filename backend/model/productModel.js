@@ -10,8 +10,8 @@ const userSchema = new mongoose.Schema({
     },
     ownerUser:{
         type:String,
-    //    type: mongoose.Schema.Types.ObjectId,
-    //    ref: 'Allusers', // Reference to the User model
+       type: mongoose.Schema.Types.ObjectId,
+       ref: 'Allusers', // Reference to the User model
        required:true
     },
 
@@ -21,10 +21,16 @@ const userSchema = new mongoose.Schema({
     },
     productType:{
        type:String,
+       enum:['Alcohol','Car','Tubaco','other'],
        required:true
 
         
-    },    
+    },   
+    EachProductPrice:{
+        type:Number,
+        required:true
+    } ,
+
     quantity: {
         type: Number,
         default: 0
@@ -37,17 +43,25 @@ const userSchema = new mongoose.Schema({
     TIN:{
         type:String,
         required:true
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Allusers'
-    },
-   
-    TaxType: {
-        type:String,
-        required:true
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Tax'
     },
 
+    TOT:{
+        type:Number,
+    },
+    VAT:{
+        type:Number,
+    },
+    Sure:{
+        type:Number,
+    },
+
+    Gumuruk:{
+        type:Number,
+    },
+
+     Excise:{
+        type:Number,
+    }
 },
 {timestamps:true});
 

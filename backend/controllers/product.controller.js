@@ -7,9 +7,10 @@ const AddProduct = async (req, res) => {
       // Access the user ID from the request object
       const { userId: ownerUser} = req.user;
       
-      
+//  TOT  VAT  Sure  Gumuruk  Excise
 
-      const { avatarImage,productName,TaxType, discription, quantity,productType} = req.body;
+      const { TOTvalue,VATvalue, Gumurukvalue,Excisevalue, EachProductPrice,avatarImage,productName, discription, quantity,productType} = req.body;
+    
     try {
         // Check if the owner user exists
         const checkUser = await Allusers.findOne({ _id: ownerUser ,role:"seller"});
@@ -22,10 +23,11 @@ const AddProduct = async (req, res) => {
             avatarImage: avatarImage,
             productName: productName,
             productType: productType,
+            EachProductPrice:EachProductPrice,
             quantity: quantity,
             discription: discription,
             TIN:checkUser.TIN,
-            TaxType:TaxType,
+        
             ownerUser: ownerUser
 
         });

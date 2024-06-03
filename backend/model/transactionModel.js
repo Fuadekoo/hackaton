@@ -16,7 +16,7 @@ const transactionSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    buyerId: {
+    buyerId: {                              
         type: mongoose.Schema.Types.ObjectId, // Change the type to ObjectId
         ref: 'AllUsers', // Assuming there is a User model
         required: true
@@ -27,8 +27,7 @@ const transactionSchema = new mongoose.Schema({
         required: true
     },
     productType: {
-        type: mongoose.Schema.Types.ObjectId, // Change the type to ObjectId
-        ref:'Products',
+        type:String,
         required:true
     },
 
@@ -36,6 +35,12 @@ const transactionSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+
+    singlePrice:{
+          type: Number,
+        required: true
+    },
+
     totalTax: {
          type: Number,
         required: true
@@ -45,6 +50,26 @@ const transactionSchema = new mongoose.Schema({
     type:String,
     required:true
    },
+
+   TOTValue:{
+    type:Number,
+   },
+
+    VATValue:{
+    type:Number,
+   },
+
+  SureValue:{
+    type:Number,
+   },
+
+    ExciseValue:{
+    type:Number,
+   },
+
+    GumurukValue:{
+    type:Number,
+   }
    
 },
 {

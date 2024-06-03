@@ -1,25 +1,57 @@
 import mongoose from 'mongoose';
 
 const taxSchema = new mongoose.Schema({
-   TaxType: {
-        type: String,
-        enum: ['VAT', 'TOT','Excise','Sure','GumuruTax'],
-        required: true
-    },
-    Standard: {
-        type: String,
-        required: true
-    },
-    Reduced: {
-        type: String,
-        required: true
-    },
+        StandardExciseAlcohol:{
+            type:Number
+        },
+        StandardExciseCar:{
+            type:Number
+        },
+        StandardExciseTubaco:{
+            type:Number
+        },
+        standardGumuruk:{
+        type:Number
+       },
+       
+       standardTOT:{
+        type:Number
+       },
+       standardSure:{
+        type:Number
+       },
+
+        ReducedExcise:{
+        type:Number
+       },
+       ReducedGumuruk:{
+        type:Number
+       },
+      ReducedSure:{
+        type:Number
+       },
+       ReducedTOT:{
+        type:Number
+       },
+       
+      ExemptExcise:{
+        type:Number
+       },
+       ExemptGumuruk:{
+        type:Number
+       },
+       ExemptSure:{
+        type:Number
+       },
+      ExemptTOT:{
+        type:Number
+       },
 },
 {
     timestamps: true
 }
 );
 
-const taxmodel = mongoose.model('Tax', taxSchema);
+const tax = mongoose.model('Tax',taxSchema);
 
-export default taxmodel;
+export default tax;
