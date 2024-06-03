@@ -3,6 +3,11 @@ import dotenv from 'dotenv';
 // create a user schema
 
 const userSchema = new mongoose.Schema({
+      avatarImage:{
+        type: String,
+        required:true
+    },
+
     productName: {
         type: String,
         required: true
