@@ -17,7 +17,7 @@ export default function SignIn() {
     e.preventDefault();
     try {
       dispatch(signInStart())
-    const res=await fetch('backend/api/auth/login', 
+    const res=await fetch('/backend/api/auth/login', 
     {
   method:'POST',
   headers:{
@@ -45,10 +45,9 @@ export default function SignIn() {
         <input type='email' placeholder='email' id='email' className='border p-3 rounded-lg' onChange={handleChange}/>
         <input type='password' placeholder='password' id='password' className='border p-3 rounded-lg' onChange={handleChange}/>
         <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
-        {
+          {
           loading ? 'loading ....': 'Sign In'
-        }
-        </button>
+        }</button>
       </form>
       <div className='flex gap-2 mt-5'>
         <p>Dont have an account ?</p>

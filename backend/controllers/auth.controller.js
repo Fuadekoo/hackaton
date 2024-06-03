@@ -3,8 +3,6 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import Allusers from '../model/userModel.js'; //  we have a User model
 
-
-
 // Login user
 const login = async (req, res) => {
     try {
