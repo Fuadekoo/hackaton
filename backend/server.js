@@ -7,6 +7,7 @@ import userSellerRouter from './routes/userSeller.route.js'
 import userBuyerRouter from './routes/userBuyer.route.js'
 import userAdminRouter from './routes/userAdmin.route.js'
 import authRouter from './routes/auth.route.js'
+import taxRouter from './routes/tax.route.js'
 
 const app = express();
 dotenv.config();
@@ -26,6 +27,7 @@ app.use('/api/userBuyer',userBuyerRouter);
 // this is auth middleware 
 app.use('/api/auth',authRouter);
 
+app.use('/api/tax',taxRouter);
 
 
 // error handlers middleware
@@ -34,7 +36,7 @@ app.use('/api/auth',authRouter);
 
 // listen to server
 
-const PORT = process.env.PORT || 56000;
+const PORT = process.env.PORT || 12000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
