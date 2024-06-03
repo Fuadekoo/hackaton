@@ -34,12 +34,8 @@ const login = async (req, res) => {
             process.env.jwt_secret,
             { expiresIn: '1d' }
         );
-
-        res.send({
-            message: 'User logged in successfully',
-            success: true,
-            data: token,
-        });
+        const {password:pass, ...rest}=userExists._doc;
+        res.cookie('access_token',token,{httpOnly:true}).status(200).json(rest);
     } catch (error) {
         res.send({
             message: error.message,
