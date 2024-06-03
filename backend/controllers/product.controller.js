@@ -5,9 +5,11 @@ import mongoose from 'mongoose';
 
 const AddProduct = async (req, res) => {
       // Access the user ID from the request object
-    //   const { userId: ownerUser ,TIN:TIN} = req.user;
+      const { userId: ownerUser} = req.user;
+      
+      
 
-      const { avatarImage, TaxType, discription, quantity, productType:productType, ownerUser, TIN} = req.body;
+      const { avatarImage,productName,TaxType, discription, quantity,productType} = req.body;
     try {
         // Check if the owner user exists
         const checkUser = await Allusers.findOne({ _id: ownerUser ,role:"seller"});
@@ -27,7 +29,7 @@ const AddProduct = async (req, res) => {
             productType: productType,
             quantity: quantity,
             discription: discription,
-            TIN: TIN,
+            TIN:checkUser.TIN,
             TaxType:TaxType,
             ownerUser: ownerUser
 

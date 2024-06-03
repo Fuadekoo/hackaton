@@ -16,7 +16,6 @@ const userSchema = new mongoose.Schema({
     },
     TIN:{
         type:String,
-        default:""
     },
     productType:{
         type:String,
