@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     TIN:{
         type:String,
     },
-    productType:{
+    marketType:{
         type:String,
         enum: ['Alcohol', 'Car','Tubaco'],  
 
@@ -75,12 +75,11 @@ const userSchema = new mongoose.Schema({
         type:String,
         enum:["standard","reduced","exempt"]
     },
-    
-    taxtype: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Tax'
-    }],
 
+     TaxType: {
+        type: String,
+        enum: ['VAT', 'TOT'],
+    },
 },
 {timestamps:true});
 

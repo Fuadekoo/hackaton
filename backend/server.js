@@ -7,6 +7,7 @@ import userSellerRouter from './routes/userSeller.route.js'
 import userBuyerRouter from './routes/userBuyer.route.js'
 import userAdminRouter from './routes/userAdmin.route.js'
 import authRouter from './routes/auth.route.js'
+import taxRouter from './routes/tax.route.js'
 
 const app = express();
 dotenv.config();
@@ -26,6 +27,7 @@ app.use('/api/userBuyer',userBuyerRouter);
 // this is auth middleware 
 app.use('/api/auth',authRouter);
 
+app.use('/api/tax',taxRouter);
 
 
 // error handlers middleware
