@@ -61,7 +61,7 @@ const userSchema = new mongoose.Schema({
   
     role: {
         type: String,
-        enum: ['buyer', 'seller','other'],  // curently the user is registred and the admin is make him/her to admin
+        enum: ['buyer', 'seller','admin'],  // curently the user is registred and the admin is make him/her to admin
         required:true,
     },
     Auditor:{
