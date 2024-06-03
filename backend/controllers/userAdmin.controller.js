@@ -21,7 +21,7 @@ const addNewUser = async (req, res) => {
         const newUser = new Allusers({fullName:fullName,userName:userName,email:email,password:hashedPassword,phonenumber:phonenumber,address:address,role:adminRole});
         await newUser.save();
         res.status(201).json({
-            message: "User created successfully",
+            message: "admin created successfully",
             success: true,
             data: newUser
         });
