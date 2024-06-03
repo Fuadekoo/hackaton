@@ -1,7 +1,7 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import Allusers from '../model/userModel.js'; 
+import Allusers from '../model/userModel.js'; //  we have a User model
 
 
 
@@ -34,8 +34,12 @@ const login = async (req, res) => {
             process.env.jwt_secret,
             { expiresIn: '1d' }
         );
-        const {password:pass, ...rest}=userExists._doc;
-        res.cookie('access_token',token,{httpOnly:true}).status(200).json(rest);
+
+        res.send({
+            message: 'User logged in successfully',
+            success: true,
+            data: token,
+        });
     } catch (error) {
         res.send({
             message: error.message,
