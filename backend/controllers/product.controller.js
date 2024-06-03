@@ -18,7 +18,7 @@ const AddProduct = async (req, res) => {
             return res.status(400).json({ message: "The user does not exist or you are not 'seller'", success: false, data: null });
         }
 
-        // Create the new room
+        // Create the new product
         const ProductData = await Product.create({
             avatarImage: avatarImage,
             productName: productName,

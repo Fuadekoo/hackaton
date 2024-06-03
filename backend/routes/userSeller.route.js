@@ -7,6 +7,7 @@ const router=express.Router();
 // Register new user
 router.post("/signup", addNewUser);
 router.get("/allusers", salectAllUser);
+router.put("/update-seler/:id",updateSeller)
 
 
 
