@@ -3,9 +3,16 @@ import dotenv from 'dotenv';
 // create a user schema
 
 const userSchema = new mongoose.Schema({
+    fullName:{
+        type:String,
+        required:true
+    },
+    userName:{
+        type:String,
+        required:true
+    },
     companyName: {
         type: String,
-        required: true
     },
     TIN:{
         type:String,
@@ -49,8 +56,8 @@ const userSchema = new mongoose.Schema({
   
     role: {
         type: String,
-        enum: ['buyer', 'seller'],
-        required:true
+        enum: ['buyer', 'seller','other'],  // curently the user is registred and the admin is make him/her to admin
+        required:true,
     },
     Auditor:{
         type:Boolean,
