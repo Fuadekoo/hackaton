@@ -11,13 +11,9 @@ const userSchema = new mongoose.Schema({
         type:String,
         default:""
     },
-    marketType:{
-        type:String,
-    },
     capital:{
         type:String,
     },
-
      email: {
         type: String,
         required: true,
@@ -65,11 +61,6 @@ const userSchema = new mongoose.Schema({
         enum:["standard","reduced","exempt"]
     },
     
-    level:{
-        type:String,
-        enum:["standard","reduced","exa"]
-    },
-
     taxtype: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Tax'
