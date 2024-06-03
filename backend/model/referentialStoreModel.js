@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 import dotenv from 'dotenv';
-// create a user schema
+// create a refential schema
 
 const userSchema = new mongoose.Schema({
     orderId: {
@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
         ref: 'Tax'
     }],
 
-},
+}, 
 {timestamps:true});
 
 const Allusers = mongoose.model('ReferentialStore', userSchema);
