@@ -10,6 +10,7 @@ const router=express.Router();
 router.post("/signup",roleCheckMiddleware, addNewUser);
 router.get("/allusers", salectAllUser);
 router.put("/update-admin/:id",roleCheckMiddleware,updateAdmin);
+// all a correctlt work
 
 
 

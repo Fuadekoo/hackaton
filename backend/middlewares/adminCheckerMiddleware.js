@@ -13,7 +13,7 @@ export default (req, res, next) => {
       next();
     } catch (error) {
       return res.status(401).send({
-          message:`Access denied. Only admins are allowed.`,
+          message:"Access denied. Only admins are allowed.",
           success:false
       });
     }
