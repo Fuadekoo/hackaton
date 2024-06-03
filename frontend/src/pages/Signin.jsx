@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { Link , useNavigate} from 'react-router-dom'
-
+import {useSelector,useDispatch} from 'react-redux';
+import { signInStart,signInSuccess,signInFailure } from '../redux/user/userSlice';
 export default function SignIn() {
+  const dispatch = useDispatch();
   const [formData , setFormData]=useState({});
-  // const{loading,error}=useSelector(state=>state.user);
-  // const navigate=useNavigate();
+  const{loading,error}=useSelector(state=>state.user);
+  const navigate=useNavigate();
   const handleChange =(e)=>{
    setFormData({
     ...formData,
@@ -14,8 +16,8 @@ export default function SignIn() {
   const handleSumbit=async (e)=>{
     e.preventDefault();
     try {
-      // dispatch(signInStart())
-    const res=await fetch('/api/auth/signin', 
+      dispatch(signInStart())
+    const res=await fetch('backend/api/auth/login', 
     {
   method:'POST',
   headers:{
@@ -26,13 +28,13 @@ export default function SignIn() {
     const data =await res.json();
     console.log(data);
     if(data.success===false){
-  // dispatch(signInFailure(data.message));
+  dispatch(signInFailure(data.message));
       return;
     }
     dispatch(signInSuccess(data));
     navigate('/')
     } catch (error) {
-  //  dispatch(signInFailure(error.message));
+   dispatch(signInFailure(error.message));
     }
     
   };
@@ -42,8 +44,10 @@ export default function SignIn() {
       <form onSubmit={handleSumbit}  className='flex flex-col gap-4'>
         <input type='email' placeholder='email' id='email' className='border p-3 rounded-lg' onChange={handleChange}/>
         <input type='password' placeholder='password' id='password' className='border p-3 rounded-lg' onChange={handleChange}/>
-        <button  className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
-      Sign In
+        <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
+        {
+          loading ? 'loading ....': 'Sign In'
+        }
         </button>
       </form>
       <div className='flex gap-2 mt-5'>
@@ -52,7 +56,7 @@ export default function SignIn() {
           <span className='text-blue-700'>Sign Up</span>
         </Link>
       </div>
-      {/* {error && <p className='text-red-500'>{error}</p>} */}
+      {error && <p className='text-red-500'>{error}</p>}
     </div>
   )
 }
