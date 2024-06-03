@@ -1,14 +1,29 @@
 import mongoose from "mongoose"
 import dotenv from 'dotenv';
-// create a user schema
+// create a product schema
 
 const userSchema = new mongoose.Schema({
+
+      avatarImage:{
+        type: String,
+        required:true
+    },
+    ownerUser:{
+        type:String,
+    //    type: mongoose.Schema.Types.ObjectId,
+    //    ref: 'Allusers', // Reference to the User model
+       required:true
+    },
+
     productName: {
         type: String,
         required: true
     },
     productType:{
-        type:String,
+       type:String,
+       required:true
+
+        
     },    
     quantity: {
         type: Number,
@@ -20,14 +35,18 @@ const userSchema = new mongoose.Schema({
   
     
     TIN:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Allusers'
+        type:String,
+        required:true
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Allusers'
     },
    
-    taxtype: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Tax'
-    }],
+    TaxType: {
+        type:String,
+        required:true
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Tax'
+    },
 
 },
 {timestamps:true});

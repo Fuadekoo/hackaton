@@ -1,7 +1,12 @@
 import express from 'express'
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import productRouter from './routes/product.route.js'
 import connectDB from './config/dbConfig.js';
+import userSellerRouter from './routes/userSeller.route.js'
+import userBuyerRouter from './routes/userBuyer.route.js'
+import userAdminRouter from './routes/userAdmin.route.js'
+import authRouter from './routes/auth.route.js'
 
 const app = express();
 dotenv.config();
@@ -10,8 +15,16 @@ app.use(express.json());
 app.use(cookieParser());
 
 
+// middleware
+app.use('/api/product',productRouter);
 
 // middleware
+app.use('/api/userSeller',userSellerRouter);
+app.use('/api/userAdmin',userAdminRouter);
+app.use('/api/userBuyer',userBuyerRouter);
+
+// this is auth middleware 
+app.use('/api/auth',authRouter);
 
 
 
@@ -20,11 +33,9 @@ app.use(cookieParser());
 
 
 // listen to server
-<<<<<<< HEAD
+
 const PORT = process.env.PORT || 56000;
-=======
-const PORT = process.env.PORT || 6000;
->>>>>>> 19ad067f4b80b574e53c47843201efa2423a44d1
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
