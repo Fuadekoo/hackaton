@@ -11,10 +11,9 @@ const userSchema = new mongoose.Schema({
         type:Boolean,
         default:false
     },
-    taxtype: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Tax'
-    }],
+    taxtype: {
+        type:String,
+    }
 
 }, 
 {timestamps:true});

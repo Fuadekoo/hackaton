@@ -47,6 +47,27 @@ const salectAllUser = async(req,res)=>{
 }
 //add the user
 
+// / Update the userseler
+const updateBuyer = async(req, res) => {
+    try {
+        //Find the buyer and update it
+        const userseler = await Allusers.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        //Send success response
+        res.status(200).send({
+            success: true,
+            message: "buyer updated successfully",
+            userseler: userseler,
+        });
+    } catch (error) {
+        //send error response
+        res.status(500).send({
+            success: false,
+            message: error.message,
+        });
+    }
+}
+
 export {addNewUser,
-    salectAllUser
+    salectAllUser,
+    updateBuyer
 };
