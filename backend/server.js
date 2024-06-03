@@ -20,7 +20,11 @@ app.use(cookieParser());
 
 
 // listen to server
+<<<<<<< HEAD
 const PORT = process.env.PORT || 56000;
+=======
+const PORT = process.env.PORT || 6000;
+>>>>>>> 19ad067f4b80b574e53c47843201efa2423a44d1
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
