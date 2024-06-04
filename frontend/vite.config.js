@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     proxy:{
       '/backend':{
-        target:'http://localhost:56000',
+        target:'http://localhost:12000',
         secure:false,
       },
     }
