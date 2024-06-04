@@ -1,7 +1,7 @@
 import {FaSearch} from  'react-icons/fa';
 import {Link,useNavigate,useLocation} from 'react-router-dom'
 // import { useEffect, useState } from 'react';
-
+//  Nav Bar
 export default function Header() {
   const navigate=useNavigate();
   const location = useLocation(); 
@@ -11,7 +11,7 @@ return (
         <div className='flex justify-between items-center max-w-16xl mx-auto p-3'>
           <Link to='/'>
         <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>
-        <span className='text-slate-500'>Mister</span>
+        <span className='text-slate-500'>Minster</span>
         <span className='text-slate-700'>of Trade</span>
         </h1>
         </Link>  
@@ -29,9 +29,11 @@ return (
         <Link to='/about'>       
          <li className='hidden sm:inline text-slate-700 hover:underline'>About</li>
        </Link>
-       
         <Link to='/profile'>  
           <li className=' text-slate-700 hover:underline'>Sign in</li>    
+       </Link>
+       <Link to='/bill'>  
+          <li className=' text-slate-700 hover:underline'>Bill</li>    
        </Link>
        </ul>
         </div>

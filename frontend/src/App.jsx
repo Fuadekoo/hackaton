@@ -12,6 +12,7 @@ import UpdateListing from './pages/UpdateListing'
 import Search from './pages/Search'
 import AdminSignUp from './pages/AdminSignUp'
 import SellerSignUp from './pages/SellerSignUp'
+import Bill from './pages/Bill'
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +24,7 @@ function App() {
         <Route path='/sign-in' element={<Signin />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/about' element={<About />} />
+        <Route path='/bill' element={<Bill />} />
         <Route path='/listing/:listingId' element={<Listing />} />
         <Route path='/search' element={<Search/>} />
         <Route element={<PrivateRoute />}>

@@ -17,7 +17,7 @@ export default function SignIn() {
     e.preventDefault();
     try {
       dispatch(signInStart())
-    const res=await fetch('/backend/api/auth/login', 
+    const res=await fetch('/api/auth/login', 
     {
   method:'POST',
   headers:{
