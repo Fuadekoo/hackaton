@@ -2,7 +2,8 @@ import express from 'express';
 import bcrypt from 'bcrypt';
 // import bcryptjs from "bcryptjs"
 import jwt from 'jsonwebtoken';
-import Allusers from '../model/userModel.js'; //  we have a User model
+import Allusers from '../model/userModel.js'; 
+//  we have a User model
 
 // Login user
 const login = async (req, res) => {
